@@ -1,0 +1,12 @@
+.black-title, .white-title{
+ font-size: calc(18px + 2vw);
+ font-weight: bold;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+}
+.black-title{
+    color: map-get($colors, color-black);
+}
+.white-title{
+    color: map-get($colors, secondary);
+}

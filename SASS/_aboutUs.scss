@@ -1,0 +1,75 @@
+.btn{
+    @include button(map-get($colors, primary), map-get($colors, secondary));
+    &:hover{
+        @include shadow-primary(map-get($colors, color-black), map-get($colors, color-black));
+    }
+    &:focus{
+        @include focus-shadow (map-get($colors, color-black), map-get($colors, color-black));
+    }
+}
+.about-interior{
+    span{
+        color: map-get($colors, primary);
+    }
+    p{
+        text-align: justify;
+    }
+    @media (max-width: $breakpoint-lg) {
+        @if $breakpoint-lg <= 1200px {
+            padding-top: calc(5px + 4vw);
+        }
+    }
+}
+.about-image{
+    .kitchen, .living{
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+        &:hover{
+            outline: 10px solid map-get($colors, secondary);
+            outline-offset: -10px;
+            .play-icon{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .play-icon{
+            opacity: 0;
+            visibility: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: map-get($colors, color-black);
+            font-size: calc(30px + 3vw);
+            transition: 0.5s ease-in-out;
+        }
+    }
+    @media (max-width: $breakpoint-lg) {
+        @if $breakpoint-lg <= 1200px {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+    .kitchen{
+        z-index: 2;
+        @media (max-width: $breakpoint-sm) {
+            @if $breakpoint-sm <= 576px {
+                padding-right: calc(5px + 1vw);
+            }
+        }
+    }
+    .living{
+        margin: 8vh 0 -8vh -8vh;
+        z-index: 1;
+        @media (max-width: $breakpoint-lg) {
+            @if $breakpoint-lg <= 1200px {
+                margin: 8vw 0 -7vw -12vw  !important;
+            }
+        }
+        @media (max-width: $breakpoint-sm) {
+            @if $breakpoint-sm <= 576px {
+                margin: 0 !important;
+                padding-left: calc(5px + 1vw);
+            }
+        }
+    }
+}

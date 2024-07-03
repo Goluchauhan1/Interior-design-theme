@@ -1,0 +1,72 @@
+.blog{
+    background: url($blog_img) no-repeat center;
+    background-size: cover;
+    .overlay{
+        .card:hover{
+            .blog-hover{
+                opacity: 1;
+                visibility: visible;
+            }
+           h5,h6{
+            color: map-get($colors, primary);
+           } 
+        }
+        @media (max-width: 767px){
+            .col-md-4{
+                padding: 0 !important;
+            }
+            .blog-card{
+                margin: 48px 0;
+            }
+        }
+        background-color: rgba(map-get($colors, secondary), $alpha: 0.7);
+        .card-body{
+            background-color: map-get($colors, secondary);
+            h5{
+                font-size: calc(5px + 1vw);
+                transition: 0.5s ease-in-out;
+            }
+            h6{
+                font-size: calc(3px + 1vw);
+                transition: 0.5s ease-in-out;
+            }
+            p{
+                font-size: calc(1px + 1vw);
+            }
+            @media (max-width: 767px){
+                h5{
+                    font-size: calc(7px + 2vw);
+                }
+                h6{
+                    font-size: calc(5px + 2vw);
+                }
+                p{
+                    font-size: calc(3px + 2vw);
+                }
+            }
+        }
+        .blog-img{
+        margin-left: -35px;
+        margin-right: 35px;
+        margin-bottom: -50px;
+        @media (max-width: 767px){
+            margin: 0 0 0 0;
+        }
+            .blog-hover{
+                font-size: calc(10px + 2vw);
+                top: 5%;
+                left: 5%;
+                opacity: 0;
+                visibility: hidden;
+                height: 90%;
+                width: 90%;
+                background-color: rgba(map-get($colors, primary), $alpha: 0.6);
+                transition: 0.5s ease-in-out;
+                @media (max-width: 767px){
+                    font-size: calc(10px + 5vw);
+                }
+            }
+        }
+       
+    }
+}

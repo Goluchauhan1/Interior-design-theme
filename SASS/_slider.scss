@@ -1,0 +1,80 @@
+#Slider {
+    .btn{
+        @include button(map-get($colors, color-black), map-get($colors, secondary));
+        &:hover{
+            @include shadow-primary(map-get($colors, primary), map-get($colors, primary));
+        }
+        &:focus{
+            @include focus-shadow (map-get($colors, primary), map-get($colors, primary));
+        }
+    }
+    .button-white{
+        @include button(map-get($colors, primary), map-get($colors, secondary));
+        &:hover{
+            @include shadow-primary(map-get($colors, color-black), map-get($colors, color-black));
+        }
+        &:focus{
+            @include focus-shadow (map-get($colors, color-black), map-get($colors, color-black));
+        }
+    }
+    .owl-item.active, .owl-item {
+        display: flex;
+        justify-content: center;
+    }
+    .owl-nav .owl-next, .owl-nav .owl-prev {
+        @include owl-nav (map-get($colors, secondary), calc(5px + 2vw), 41%, 0px 15px)
+    }
+    .owl-nav {
+        .owl-next{
+            right: 0;
+        }
+        .owl-prev {
+            left: 0;
+        }
+        button{
+            background: rgba(map-get($colors, secondary), $alpha: 0.4) !important;
+            backdrop-filter: blur(10px);
+        }
+        &{
+            margin: 0;
+        }
+    }
+    .owl-dots { 
+        margin: 0 !important;  
+        .owl-dot {
+            span {
+                width: 18px;
+                height: 18px;
+                background-color: map-get($colors, secondary);
+                transform: scale(1);
+                transition: 0.45s all;
+            }
+            &:hover span {
+                background: map-get($colors, primary);
+                color: map-get($colors, primary) !important;
+            }
+            &.active span {
+                transform: scale(0.86);
+                background: map-get($colors, primary) !important;
+                outline: 3px solid map-get($colors, secondary);
+            }
+        }
+    }
+    .text-center {
+        @media (max-width: $breakpoint-md) {
+            @if $breakpoint-md <= 992px {
+                margin: 0 !important;
+            }
+        }
+    }
+    .w-75 {
+        @media (max-width: $breakpoint-sm) {
+            @if $breakpoint-sm <= 576px {
+                width: 100% !important;
+            }
+            @else {
+                width: 75%;
+            }
+        }
+    }
+}

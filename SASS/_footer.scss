@@ -1,0 +1,59 @@
+.footer-top{
+    background: url($footer_img) no-repeat center;
+    background-size: cover;
+    .overlay{
+        background-color: rgba(map-get($colors, color-black), $alpha: 0.9);
+        color: map-get($colors, secondary);
+        h3{
+            color: map-get($colors, primary);
+            font-size: calc(5px + 2vw);
+        }
+        p,h6{
+            font-size: calc(0px + 1vw);
+        }
+        .main-logo{
+            width: calc(50px + 18vw);
+        }
+        .card{
+            .col-8{
+                color: map-get($colors, secondary);
+                h6{
+                    color: map-get($colors, primary);
+                }
+            }
+        }
+        .input-group{
+           button{
+            @extend .btn;
+            color: map-get($colors, color-black) !important;
+            transform: scale(1) !important;
+           }
+
+            ::placeholder{
+                color: map-get($colors, color-black);
+                font-style: italic;
+            }
+        }
+        @media (max-width: 767px){
+            .col-md-4{
+                padding: 0 !important;
+            }
+            .popular-new{
+                margin: 35px 0;
+            }
+            h3{
+                font-size: calc(5px + 6vw);
+            }
+            p,h6, .btn{
+                font-size: calc(1px + 4vw);
+            }
+            .main-logo{
+                width: calc(50px + 35vw) !important;
+            }
+        }
+    }
+}
+.footer-bottom{
+    font-size: calc(7px + 1vw);
+    font-family: "Maven Pro", sans-serif !important;
+}

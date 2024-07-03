@@ -1,0 +1,74 @@
+.project{
+    background: url($project_img) no-repeat center;
+    background-size: cover;
+    .overlay{
+        background-color: rgba(map-get($colors, secondary), $alpha: 0.82);
+        .project-img{
+            &:hover .project-hover{
+                opacity: 1;
+                visibility: visible;
+            }
+            .project-hover{
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.5s ease-in-out;
+                color: map-get($colors, secondary);
+                top: 0;
+                background: rgba(map-get($colors, color-black), $alpha: 0.7);
+                h2{
+                    font-size: calc(6px + 1vw);
+                    margin: 0 0 calc(1px + 1vw) calc(1px + 1vw) !important;
+                    @media (max-width: $breakpoint-sm) {
+                        @if $breakpoint-sm <= 576px {
+                            font-size: calc(5px + 2vw);
+                        }
+                    }
+                }
+                .fa-circle-play{
+                    font-size: calc(5px + 2vw);
+                    cursor: pointer;
+                    @media (max-width: $breakpoint-sm) {
+                        @if $breakpoint-sm <= 576px {
+                            font-size: calc(5px + 4vw);
+                        }
+                    }
+                }
+                h4{
+                    font-size: calc(0px + 1vw);
+                    margin: calc(1px + 1vw) calc(1px + 1vw) 0 0  !important;
+                    @media (max-width: $breakpoint-sm) {
+                        @if $breakpoint-sm <= 576px {
+                            font-size: calc(7px + 1vw);
+                        }
+                    }
+                }
+            }
+        }
+        .col-6{
+            @media (max-width: $breakpoint-sm) {
+                @if $breakpoint-sm <= 576px{
+                    padding: calc(5px + 1vw)!important;
+                }
+            }
+        }
+        .nav{
+           @media (max-width: $breakpoint-md) {
+            @if $breakpoint-md <= 992px{
+                padding-top: calc(2px + 1vw);
+            }
+           }
+            .nav-item{
+                .nav-link{
+                    color: map-get($colors, color-black) !important;
+                    font-size: calc(7px + 1vw);
+                }
+                &:hover .nav-link{
+                    padding: 0 8px !important;
+                    font-weight: normal !important;
+                    background-color: map-get($colors, primary) !important;
+                    text-shadow: 0 1.5px 2px map-get($colors, color-black);
+                }
+            }
+        }
+    }
+}

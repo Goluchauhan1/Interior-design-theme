@@ -1,0 +1,127 @@
+header{
+    background: url($header_img) no-repeat center;
+    background-size: cover;
+    .overlay{
+        background-color: rgba(map-get($colors, secondary), $alpha: 0.45);
+        .top-nav{
+            a{
+                color: map-get($colors, color-black);
+                font-size: calc(10px + 1vw);
+            }
+        }
+        .navigation-bar{
+            background: map-get($colors, color-black);
+            .navbar{
+                .navbar-brand{
+                    width: calc(100px + 10vw);
+                }
+               .navbar-nav{
+                font-size: calc(2px + 1vw);
+               }
+               .fa-xmark{
+                color: map-get($colors, color-black);
+                font-size: calc(10px + 1vw);
+                &:hover{
+                    color: map-get($colors, primary);
+                }
+               }
+               .fa-search{
+                color: map-get($colors, secondary);
+                font-size: calc(10px + 1vw);
+                &:hover{
+                    color: map-get($colors, primary);
+                }
+               }
+               a{
+                color: map-get($colors, secondary);
+                &::after{
+                    @include after()
+                }
+                &:hover{
+                    color: map-get($colors, primary) !important;
+                   &::after{
+                    transform: scale(1);
+                    transform-origin: left;
+                   }
+                }
+               }
+            }
+            .navbar-toggler-icon{
+                font-size: 15px !important;
+            }
+            #menu {
+                background: rgba(map-get($colors, color-black), $alpha: 0.6);
+                backdrop-filter: blur(5px);
+                border-color: map-get($colors, primary) !important;
+                a{
+                    color: map-get($colors, secondary);
+                    padding: 7px 0px !important ;
+                    &:hover{
+                        color: map-get($colors, primary) !important;
+                    }
+                   }
+            }
+            .nav-link{
+                padding: 5px 15px !important ;
+            }
+            .nav-item{
+                .active{
+                    color: map-get($colors, primary) !important;
+                }
+            }
+            .search{
+                cursor: pointer;
+                transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+            }
+            .searchBox{
+                opacity: 0;
+                visibility: hidden;
+                transition: right 2s;
+                transition: opacity 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+                &.active{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            .hide, .none, .hnone{
+                display: none;
+            }
+            input{
+                height: calc(22px + 2vw);
+                margin: 0 !important;
+                backdrop-filter: 5px;
+            }
+            .searchBtn, .closeBtn{
+                transition: opacity 0.3s cubic-bezier(0.9, 0, 0.3, 0.9);
+            }
+            .search:hover .closeBtn{
+                filter: drop-shadow(1px 2px 1px map-get($colors, primary));
+            }
+            .closeBtn{
+                opacity: 0;
+                visibility: hidden;
+            }
+            .searchBtn.active{
+                opacity: 0;
+                rotate: (90deg);
+                transition: 0.5s ease-in-out;
+            }
+            .closeBtn.active{
+                opacity: 1;
+                rotate: (90deg);
+                visibility: visible;
+                transition: 0.5s;
+                scale: 1;
+            }
+        }
+        .search-form{
+            @media (max-width: $breakpoint-md){
+                width: calc(150px + 24vw) !important;
+            }
+            @media (max-width: $breakpoint-sm){
+                width: calc(140px + 6vw) !important;
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.experience{
+    background: url($experience_img) no-repeat center;
+    background-size: cover;
+    .overlay{
+        background-color: rgba(map-get($colors, color-black), $alpha: 0.85);
+        h2{
+            color: map-get($colors, primary);
+            font-size: calc(20px + 3vw);
+        }
+        h4{
+            color: map-get($colors, secondary);
+            font-size: calc(15px + 1vw);
+        }
+        .experience-col{
+            @media (max-width: 767px){
+                margin-top: calc(15px + 1vw) !important;
+            }
+        }
+    }
+}
