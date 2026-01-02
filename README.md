@@ -4,7 +4,7 @@
 
 🌱 I’m currently learning:- JavaScript
 
-📫 How to reach me:- golukumarmpr2003@gmail.com
+📫 How to reach me:- golukumarmpr-xxxx-@gmail.com
 
 😄 Pronouns: Golu
 
